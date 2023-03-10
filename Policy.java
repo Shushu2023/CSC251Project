@@ -97,7 +97,7 @@ public class Policy {
    */
 	public double calculateBMI() {
 		
-		double bmi = (this.policyHolderWeight*703)/Math.pow(this.policyHolderWeight,2);
+		double bmi = (this.policyHolderWeight*703)/Math.pow(this.policyHolderHeight,2);
 		return bmi;
 	}
    /**
@@ -107,21 +107,21 @@ public class Policy {
    */
 
 	public double calculateInsurancePolicyPrice() {
-		double price =0;
-		int baseFee = 600;
+		double price =600;
+		
 		
 		if(this.age>50)
 		{	
-			price = baseFee+75;
+			price = price+75;
 		}
 		
-		if(this.smokingStatus.equals("Smoker")) 
+		if(this.smokingStatus.equalsIgnoreCase("Smoker")) 
 		{
-			price = baseFee+100;
+			price = price+100;
 		}
 		
 		if(this.calculateBMI()>35) {
-			price = baseFee + ((this.calculateBMI()-35)*20);
+			price = price + ((this.calculateBMI()-35)*20);
 		}
 		return price;
 	}
