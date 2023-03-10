@@ -89,11 +89,23 @@ public class Policy {
 	public void setPolicyHolderWeight(double policyHolderWeight) {
 		this.policyHolderWeight = policyHolderWeight;
 	}
+   /**
+      The calculateBMI method calculates the policy holder weight and 
+      returns the bmi of the policy holder
+      @return policy holder BMI
+     
+   */
 	public double calculateBMI() {
 		
 		double bmi = (this.policyHolderWeight*703)/Math.pow(this.policyHolderWeight,2);
 		return bmi;
 	}
+   /**
+      The calculateInsurancePolicyPrice method calculates the insurace policy price
+      and returns the price of the insurance policy
+      @return The price of the insuralnce policy
+   */
+
 	public double calculateInsurancePolicyPrice() {
 		double price =0;
 		int baseFee = 600;
