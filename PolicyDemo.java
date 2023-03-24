@@ -60,17 +60,18 @@ public class PolicyDemo
       //print out information about each Policy object
       for(int i =0; i<policyList.size(); i++)
       { 
-         //display information about the Policy
-//         System.out.println("Policy Information:");
+        
          System.out.println(policyList.get(i));//notice how the toString() method does not need to be explicitly called when printing out information of our Course class
          System.out.println();//print a blank line between Courses for easier readability
-        //  
-//            if(policy.getSmokingStatus().equalsIgnoreCase("smoker"))//keep track of the number of smokers
-//            numSmokers++;
+       
+         if(policyList.get(i).getPolicyHolder().getSmokingStatus().equalsIgnoreCase("smoker"))//keep track of the number of smokers
+            	
+            numSmokers++;
       }
       
       //print out the number of smokers and non-smokers
-      //  System.out.println("The number of policies with a smoker is: " + numSmokers);
-//        System.out.println("The number of policies with a non-smoker is: " + (policyList.size() - numSmokers) );
-   }
-}
+      // and the number of policies generated
+        System.out.println("There were "+ Policy.getNoOfPolicies()+ " Policy objects created.");
+        System.out.println("The number of policies with a smoker is: " + numSmokers);
+        System.out.println("The number of policies with a non-smoker is: " + (policyList.size() - numSmokers) );
+   }}
