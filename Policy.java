@@ -3,6 +3,8 @@ public class Policy
    private String policyNumber;
    private String providerName;
    private PolicyHolder policyHolder; //Instance of the PolicyHolder class
+   private static int noOfPolicies=0; // static field to keep track of no of policies
+
 
   /**
    Constructor that accepts arguments for each field
@@ -14,7 +16,7 @@ public class Policy
       policyNumber = pNumber;
       providerName = pName;
       policyHolder = new PolicyHolder(holder);//we use the copy contructor of the PolicyHolder class to avoid security holes
-
+      noOfPolicies++;
       
    }
    
@@ -44,6 +46,15 @@ public class Policy
    {
       return new PolicyHolder(policyHolder); 
    }
+   
+    /**
+      getNoOfPolicies static method
+      @return - return the number of policies generated  */
+
+   public static int getNoOfPolicies() {
+		return noOfPolicies;
+	}
+
 
       //setters//
    
